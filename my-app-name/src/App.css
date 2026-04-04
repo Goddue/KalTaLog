@@ -1,9 +1,19 @@
 header {
   background-color: #282c34;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   color: white;
   font-size: 200%;
+}
+
+.navlink {
+    text-decoration: none;
+    color: white;
+}
+
+.active {
+  font-weight: bold;
+  color: red;
+  text-decoration: none;
 }
