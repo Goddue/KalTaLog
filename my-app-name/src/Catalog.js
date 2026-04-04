@@ -39,6 +39,7 @@ function BookCard(props) {
       <p>Название { props.name }</p>
       <p>Автор { props.author }</p>
       <p>Цена { props.price }</p>
+      <button>В корзину</button>
     </div>
   )
 }

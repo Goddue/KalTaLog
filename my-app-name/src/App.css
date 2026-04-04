@@ -17,3 +17,15 @@ header {
   color: red;
   text-decoration: none;
 }
+
+.BookCard {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 30%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
