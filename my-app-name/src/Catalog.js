@@ -2,46 +2,48 @@ import './App.css';
 
 const books = [
   {
-    "название": "Война и мир",
-    "автор": "Лев Толстой",
-    "цена": 550
+    id: 1,
+    название: "Война и мир",
+    автор: "Лев Толстой",
+    цена: 550
   },
   {
-    "название": "Преступление и наказание",
-    "автор": "Фёдор Достоевский",
-    "цена": 470
+    id: 2,
+    название: "Преступление и наказание",
+    автор: "Фёдор Достоевский",
+    цена: 470
   },
   {
-    "название": "Мастер и Маргарита",
-    "автор": "Михаил Булгаков",
-    "цена": 620
+    id: 3,
+    название: "Мастер и Маргарита",
+    автор: "Михаил Булгаков",
+    цена: 620
   }
-]
+];
 
-function Catalog() {
-  return(
+function Catalog({ addToCart }) {
+  return (
     <div className="Catalog">
-        {books.map((book, index) => (
-          <BookCard
-            key={index}
-            name={book["название"]}
-            author={book["автор"]}
-            price={book["цена"]}
-          />
-        ))}
-      </div>
-  )
+      {books.map((book) => (
+        <BookCard
+          key={book.id}
+          book={book}
+          addToCart={addToCart}
+        />
+      ))}
+    </div>
+  );
 }
 
-function BookCard(props) {
+function BookCard({ book, addToCart }) {
   return (
     <div className='BookCard'>
-      <p>Название { props.name }</p>
-      <p>Автор { props.author }</p>
-      <p>Цена { props.price }</p>
-      <button>В корзину</button>
+      <p>Название {book.название}</p>
+      <p>Автор {book.автор}</p>
+      <p>Цена {book.цена}</p>
+      <button onClick={() => addToCart(book)}>В корзину</button>
     </div>
-  )
+  );
 }
 
 export { Catalog, BookCard, books };
